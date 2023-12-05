@@ -1,3 +1,3 @@
 module github.com/abhibansal530/advent-of-code
 
-go 1.16
+go 1.19
