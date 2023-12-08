@@ -26,3 +26,15 @@ func ReadFromFile(filename string) (result []int) {
 	}
 	return result
 }
+
+// Parse "12 34 56" into []{12, 34, 56}.
+func ParseNumsFromStr(s string) []int64 {
+	var res []int64
+	sl := strings.Fields(s)
+	for _, x := range sl {
+		y, err := strconv.ParseInt(x, 10, 64)
+		PanicOnError(err)
+		res = append(res, y)
+	}
+	return res
+}
