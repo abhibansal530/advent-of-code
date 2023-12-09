@@ -38,3 +38,11 @@ func ParseNumsFromStr(s string) []int64 {
 	}
 	return res
 }
+
+func ToInt64(s string) int64 {
+	x, err := strconv.ParseInt(s, 10, 64)
+	if err != nil {
+		PanicOnError(fmt.Errorf("failed to parse %s: %w", s, err))
+	}
+	return x
+}
